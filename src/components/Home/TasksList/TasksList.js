@@ -1,20 +1,25 @@
 // deps
-import React, { useState } from "react";
+import React from "react";
 
 // styles
 import './TasksList.css';
 
-function TasksList({ tasks }) {
+function TasksList({ tasks, setTasks }) {
+
+    const markTaskAsCompleted = (indexToRemove) => {
+        setTasks(prevTasks => prevTasks.filter((_, index) => index !== indexToRemove));
+    }
 
     return (
-        <div className="home-container">
-            <div className="tasks-container">
-                <ul className="tasks-list">
-                    {tasks.map((task, key) => (
-                        <li key={key}>{task}</li>
-                    ))}
-                </ul>
-            </div>
+        <div className="tasks-container">
+            {tasks.map((task, key) => (
+                <div className="task" key={key}>
+                    <div className="task-text">
+                        {task}
+                    </div>
+                    <input className="task-completed-check" type="checkbox" onChange={() => markTaskAsCompleted(key)}></input>
+                </div>
+            ))}
         </div>
     );
 }

@@ -1,0 +1,6 @@
+.pet-image {
+    border: 2px solid black;
+    height: 230px;
+    width: 230px;
+    border-radius: 50%;
+}

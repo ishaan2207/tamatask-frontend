@@ -7,6 +7,7 @@ import './Home.css';
 // components
 import TasksList from "../../components/Home/TasksList/TasksList";
 import AddTask from "../../components/Home/AddTask/AddTask";
+import Pet from "../../components/Home/Pet/Pet";
 
 function Home() {
 
@@ -14,7 +15,8 @@ function Home() {
 
     return (
         <div className="home-container">
-            <TasksList tasks={tasks} />
+            <Pet />
+            <TasksList tasks={tasks} setTasks={setTasks} />
             <AddTask setTasks={setTasks} />
         </div>
     );
