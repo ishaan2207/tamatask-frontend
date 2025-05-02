@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import './AddTask.css';
 
 function AddTask({ setTasks }) {
-
     const [newTask, setNewTask] = useState('');
 
     const addNewTask = (task) => {
